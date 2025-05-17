@@ -3,12 +3,7 @@
 
 
 
-::============================================================================
-::
-::   Homepage: mass grave[.]dev
-::      Email: mas.help@outlook.com
-::
-::============================================================================
+
 
 
 
@@ -334,7 +329,7 @@ if exist "%SysPath%\spp\store_test\" mode 134, 32
 title  Ohook Activation %masver%
 
 echo:
-echo Initializing...
+echo curl ascii.live/forrest
 call :dk_chkmal
 
 if not exist %SysPath%\sppsvc.exe (

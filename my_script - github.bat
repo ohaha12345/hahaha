@@ -1,19 +1,5 @@
   @set masver=3.0
 @echo off
-::  Elevate script as admin and pass arguments and preventing loop
-
-%nul1% fltmc || (
-if not defined _elev %psc% "start cmd.exe -arg '/c \"!_PSarg!\"' -verb runas" && exit /b
-%eline%
-echo This script needs admin rights.
-echo Right click on this script and select 'Run as administrator'.
-goto dk_done
-)
-
-
-
-
-
 
 ::  To activate Office with Ohook activation, run the script with "/Ohook" parameter or change 0 to 1 in below line
 set _act=0

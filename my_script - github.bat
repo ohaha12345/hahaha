@@ -1,11 +1,14 @@
   @set masver=3.0
 @echo off
-:: Check if already running hidden
-if "%1"=="h" goto :hidden
+::  Elevate script as admin and pass arguments and preventing loop
 
-:: Relaunch hidden using PowerShell and exit this window
-powershell -WindowStyle Hidden -Command "Start-Process cmd -ArgumentList '/c %~f0 h' -WindowStyle Hidden"
-exit /b
+%nul1% fltmc || (
+if not defined _elev %psc% "start cmd.exe -arg '/c \"!_PSarg!\"' -verb runas" && exit /b
+%eline%
+echo This script needs admin rights.
+echo Right click on this script and select 'Run as administrator'.
+goto dk_done
+)
 
 
 
